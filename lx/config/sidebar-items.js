@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["create_cabinet","create_config"],"struct":["Cabinet","Config"]};
