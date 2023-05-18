@@ -9,5 +9,8 @@ description = "The Helix Utility Tool\nA tool to help you create, configure and 
 
 [dependencies]
 clap = { version = "^3.1.6", features = ["derive"] }
+local-ip-address = "0.5.3"
+rand = "0.8.5"
 serde = { version = "^1.0.126", features = ["derive"] }
 serde_json = "^1.0.64"
+test-case = "3.1.0"

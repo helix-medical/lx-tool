@@ -37,6 +37,7 @@ mod args;
 mod commands;
 mod config;
 mod docker;
+mod install;
 use clap::Parser;
 use std::process::exit;
 
@@ -55,14 +56,15 @@ use std::process::exit;
 /// --  󰗦 Helix Medical 2023  --
 /// --    Environment: Dev    --
 /// ```
+#[allow(unused_variables)]
 fn header(is_dev: bool) {
     println!(" -- The Helix Utility Tool --");
     println!(" --   Credits:  Xavier2p   --");
     println!(" --  󰗦 Helix Medical 2023  --\n");
-    println!(
-        " --    Environment: {}   -- ",
-        if is_dev { "Dev " } else { "Prod" }
-    )
+    // println!(
+    //     " --    Environment: {}   -- ",
+    //     if is_dev { "Dev " } else { "Prod" }
+    // )
 }
 
 /// The main function of the tool
@@ -85,6 +87,7 @@ fn main() {
     match command.as_str() {
         "start" => commands::start(dev),
         "stop" => commands::stop(dev),
+        "install" => install::all(),
         "restart" => println!(" -- Restarting Helix --"),
         "status" => println!(" -- Helix Status --"),
         "logs" => println!(" -- Helix Logs --"),
