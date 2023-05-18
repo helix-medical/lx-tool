@@ -96,6 +96,9 @@
 <a href="#96" id="96">96</a>
 <a href="#97" id="97">97</a>
 <a href="#98" id="98">98</a>
+<a href="#99" id="99">99</a>
+<a href="#100" id="100">100</a>
+<a href="#101" id="101">101</a>
 </pre><pre class="rust"><code><span class="doccomment">//! &gt; **The Helix Utility Tool**
 //!
 //! The Helix Utility Tool is a command line tool that allows you to manage the Helix Server.
@@ -135,6 +138,7 @@
 <span class="kw">mod </span>commands;
 <span class="kw">mod </span>config;
 <span class="kw">mod </span>docker;
+<span class="kw">mod </span>install;
 <span class="kw">use </span>clap::Parser;
 <span class="kw">use </span>std::process::exit;
 
@@ -153,15 +157,16 @@
 /// --  󰗦 Helix Medical 2023  --
 /// --    Environment: Dev    --
 /// ```
+</span><span class="attr">#[allow(unused_variables)]
 </span><span class="kw">fn </span>header(is_dev: bool) {
     <span class="macro">println!</span>(<span class="string">&quot; -- The Helix Utility Tool --&quot;</span>);
     <span class="macro">println!</span>(<span class="string">&quot; --   Credits:  Xavier2p   --&quot;</span>);
     <span class="macro">println!</span>(<span class="string">&quot; --  󰗦 Helix Medical 2023  --\n&quot;</span>);
-    <span class="macro">println!</span>(
-        <span class="string">&quot; --    Environment: {}   -- &quot;</span>,
-        <span class="kw">if </span>is_dev { <span class="string">&quot;Dev &quot; </span>} <span class="kw">else </span>{ <span class="string">&quot;Prod&quot; </span>}
-    )
-}
+    <span class="comment">// println!(
+    //     &quot; --    Environment: {}   -- &quot;,
+    //     if is_dev { &quot;Dev &quot; } else { &quot;Prod&quot; }
+    // )
+</span>}
 
 <span class="doccomment">/// The main function of the tool
 /// # Example
@@ -183,6 +188,7 @@
     <span class="kw">match </span>command.as_str() {
         <span class="string">&quot;start&quot; </span>=&gt; commands::start(dev),
         <span class="string">&quot;stop&quot; </span>=&gt; commands::stop(dev),
+        <span class="string">&quot;install&quot; </span>=&gt; install::all(),
         <span class="string">&quot;restart&quot; </span>=&gt; <span class="macro">println!</span>(<span class="string">&quot; -- Restarting Helix --&quot;</span>),
         <span class="string">&quot;status&quot; </span>=&gt; <span class="macro">println!</span>(<span class="string">&quot; -- Helix Status --&quot;</span>),
         <span class="string">&quot;logs&quot; </span>=&gt; <span class="macro">println!</span>(<span class="string">&quot; -- Helix Logs --&quot;</span>),
