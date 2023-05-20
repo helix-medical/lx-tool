@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"constant":["DOCKERCOMPOSE_DEV","DOCKERCOMPOSE_PROD"],"fn":["clean","start","stop"]};
+window.SIDEBAR_ITEMS = {"constant":["DOCKERCOMPOSE_DEV","DOCKERCOMPOSE_PROD","DOT_ENV_CONFIG"],"fn":["clean","start","stop"]};

@@ -1,3 +1,3 @@
 (function() {var implementors = {
-"lx":[["impl&lt;'de&gt; <a class=\"trait\" href=\"https://docs.rs/serde/1.0.162/serde/de/trait.Deserialize.html\" title=\"trait serde::de::Deserialize\">Deserialize</a>&lt;'de&gt; for <a class=\"struct\" href=\"lx/config/struct.Cabinet.html\" title=\"struct lx::config::Cabinet\">Cabinet</a>"]]
+"lx":[["impl&lt;'de&gt; <a class=\"trait\" href=\"https://docs.rs/serde/1.0.163/serde/de/trait.Deserialize.html\" title=\"trait serde::de::Deserialize\">Deserialize</a>&lt;'de&gt; for <a class=\"struct\" href=\"lx/config/struct.Cabinet.html\" title=\"struct lx::config::Cabinet\">Cabinet</a>"]]
 };if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
