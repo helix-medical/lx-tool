@@ -1,3 +1,5 @@
+use std::process::Command;
+
 use super::docker;
 
 /// Docker Compose file for dev environment
@@ -7,6 +9,8 @@ const DOCKERCOMPOSE_DEV: &str =
 /// Docker Compose file for prod environment
 const DOCKERCOMPOSE_PROD: &str =
     "-f/Users/xavier2p/Developer/javascript/helix/releases/docker-compose.yml";
+
+const DOT_ENV_CONFIG: &str = ".env";
 
 /// Starts the Helix stack
 /// # Arguments
@@ -18,6 +22,10 @@ const DOCKERCOMPOSE_PROD: &str =
 /// ```
 pub fn start(is_dev: bool) {
     println!(" --     Starting Helix     --\n");
+    Command::new("source")
+        .arg(DOT_ENV_CONFIG)
+        .spawn()
+        .expect("Could not source .env file");
     if is_dev {
         docker::compose(DOCKERCOMPOSE_DEV, &["up", "--build"]);
     } else {
